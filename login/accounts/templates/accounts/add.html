@@ -1,0 +1,14 @@
+{% extends "accounts/layout.html" %}
+
+{% block body %}
+<div class="container">
+    <h1>Add New Account</h1>
+    <form action="{% url 'accounts:add' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'accounts:index' %}">View All People</a>
+</div>
+{% endblock %}

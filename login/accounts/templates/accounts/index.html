@@ -1,0 +1,16 @@
+{% extends "accounts/layout.html" %}
+
+{% block body %}
+<div>
+    <h1>Accounts</h1>
+    <ul>
+        {% for person in people %}
+        <li>{{person}}</li>
+        {% empty %}
+        <li>No Account.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'accounts:add' %}">Add new person</a>
+
+</div>
+{% endblock %}
